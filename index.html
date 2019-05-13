@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>HRTable</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+    <style>* { font-family: monospace }</style>
+  </head>
+  <body>
+    <h1>HRTable</h1>
+
+    <input type="text" id="skill" list="skills" placeholder="search skills...">
+    <datalist id="skills"></datalist>
+    <button id="go">Go</button>
+
+    <canvas id="chart" width="400" height="400"></canvas>
+    <div>
+      <h2>Similar skills:</h2>
+      <ul id="results"></ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/color-hash@1.0.3/dist/color-hash.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="jsdict.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
