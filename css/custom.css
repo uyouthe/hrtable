@@ -23,3 +23,11 @@
 .slides {
   background: white;
 }
+
+.stat {
+  float: right;
+}
+
+[hidden] {
+  display: none;
+}
