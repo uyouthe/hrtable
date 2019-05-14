@@ -28,7 +28,7 @@ goButton.addEventListener('click', () => {
   const skill = dict[value]
 
   if (skill && value) {
-    const similars = Object.keys(skill).sort(sortObjDesc(skill))
+    const similars = Object.keys(skill).sort(sortObjDesc(skill)).slice(0, 20)
 
     resultsList.innerHTML = wrap(similars, similar => `
       <div class="frame-97 ae-3 padding-bottom-3 margin-top-2">
