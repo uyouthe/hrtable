@@ -1,41 +1,42 @@
 console.log('Dict loaded')
-
 const keys = Object.keys(dict)
 
-document.getElementById('skills').innerHTML = keys.map(key => `
+const wrap = (arr, template) => arr.map(template).join('')
+const goButton = document.getElementById('go')
+const resultsList = document.getElementById('results')
+const chart = document.getElementById('chart')
+const skillInput = document.getElementById('skill')
+const sortObjDesc = obj => (a, b) => obj[b] - obj[a]
+const skillsDatalist = document.getElementById('skills')
+
+skillsDatalist.innerHTML = wrap(keys, key => `
   <option value="${key}">
-`).join('')
+`)
 
-const colorhash = new ColorHash()
+// const colorhash = new ColorHash()
 
-document.getElementById('go').addEventListener('click', () => {
-  const value = document.getElementById('skill').value
+goButton.addEventListener('click', () => {
+  const value = skillInput.value
+  const skill = dict[value]
 
-  if (dict[value]) {
-    const skills = Object.keys(dict[value]).sort(
-      (a, b) => dict[value][b] - dict[value][a]
-    )
+  if (skill) {
+    const similars = Object.keys(skill).sort(sortObjDesc(skill))
 
-    document.getElementById('results').innerHTML = skills.map(skill => `
-      <li>${skill}: ${dict[value][skill]}</li>
-    `).join('')
+    resultsList.innerHTML = wrap(similars, similar => `
+      <li>${similar}: ${skill[similar]}</li>
+    `)
 
-    new Chart(document.getElementById('chart'), {
-      type: 'pie',
-      data: {
-        datasets: [{
-          data: skills.map(skill => dict[value][skill]),
-          backgroundColor: skills.map(skill => colorhash.hex(skill))
-        }],
-        labels: skills
-      }
-    })
-  } else {
-    console.log('Nothing found.')
+    // new Chart(chart, {
+    //   type: 'pie',
+    //   data: {
+    //     datasets: [{
+    //       data: skills.map(skill => dict[value][skill]),
+    //       backgroundColor: skills.map(skill => colorhash.hex(skill))
+    //     }],
+    //     labels: skills
+    //   }
+    // })
   }
 })
-//
-//
-// fetch('sample.json').then(res => res.json()).then(
-//   console.log
-// ).catch(console.log)
+
+// fetch('sample.json').then(res => res.json()).then(console.log).catch(console.log)

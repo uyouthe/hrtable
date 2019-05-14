@@ -103,19 +103,24 @@
 							Extend your potential candidates base by finding skills similar to what you search for.
 						</span>
 					</p>
-          <form class="slides-form" autocomplete="off">
+          <div class="slides-form" autocomplete="off">
             <input
 							type="text"
+							id="skill"
 							class="ae-5 fromLeft input-13"
 							placeholder="angular"
+							list="skills"
 						/>
+						<datalist id="skills"></datalist>
             <button
 							type="submit"
 							class="button blue gradient ae-5 fromRight"
+							id="go"
 						>
 							Search
 						</button>
-          </form>
+          </div>
+					<ui id="results"></ul>
         </div>
 
       </div>
