@@ -34,7 +34,7 @@ document.getElementById('go').addEventListener('click', () => {
     console.log('Nothing found.')
   }
 })
-// 
+//
 //
 // fetch('sample.json').then(res => res.json()).then(
 //   console.log
