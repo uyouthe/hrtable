@@ -1,31 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+	<title>HRTable</title>
+	<link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Work Sans:100,300,400,500,600,800|Work Sans|Work Sans|Material+Icons"/>
+	<link href="css/slides.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+</head>
+<body class="slides scroll fast noPreload">
 
-    <title>HRTable</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
-    <style>* { font-family: monospace }</style>
-  </head>
-  <body>
-    <h1>HRTable</h1>
-
-    <input type="text" id="skill" list="skills" placeholder="search skills...">
-    <datalist id="skills"></datalist>
-    <button id="go">Go</button>
-
-    <canvas id="chart" width="400" height="400"></canvas>
-    <div>
-      <h2>Similar skills:</h2>
-      <ul id="results"></ul>
+<!-- Panel Top -->
+<nav class="panel top absolute ">
+  <div class="sections">
+    <div class="left">
+			<a title="HRTable">
+				<img src="assets/logo.svg" alt="HRTable">
+			</a>
+		</div>
     </div>
+  </div>
+</nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/color-hash@1.0.3/dist/color-hash.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-    <script src="jsdict.js"></script>
-    <script src="app.js"></script>
-  </body>
+<!-- Slide 1 (#13) -->
+<section class="slide whiteSlide">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="fix-8-12">
+          <h1 class="ae-1">Find more candidates now</h1>
+          <p class="ae-2">
+						<span class="opacity-8">
+							Extend your potential candidates base by finding skills similar to what you search for.
+						</span>
+					</p>
+          <div class="slides-form">
+            <input
+							type="text"
+							id="skill"
+							class="ae-5 fromLeft input-13"
+							placeholder="angular"
+							list="skills"
+						/>
+						<datalist id="skills"></datalist>
+            <button
+							type="submit"
+							class="button blue gradient ae-5 fromRight"
+							id="go"
+						>
+							Search
+						</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- results -->
+<section class="slide whiteSlide" id="results-block" hidden>
+  <div class="content">
+    <div class="container">
+      <div class="wrap padding-top-phablet-5">
+
+        <div class="fix-10-12 toCenter align-left">
+          <h1 class="ae-1">Results</h1>
+          <p class="ae-2 margin-bottom-3">
+						<span class="opacity-8">
+							Candidates that know <b id='search-query'></b> also know:
+						</span>
+					</p>
+        </div>
+        <div class="fix-12-12" id="results"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 2 (#45) -->
+<section class="slide whiteSlide">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="fix-11-12 toCenter">
+          <h1 class="ae-1">How it works</h1>
+          <p class="ae-2">
+						<span class="opacity-8">
+							We suggest you the skills that often go together based on 150,000 resumes.
+						</span>
+					</p>
+          <ul class="grid later">
+            <li class="col-4-12">
+              <img class="ae-3 fromCenter margin-bottom-3 margin-top-5" src="assets/img/icon-9.png" height="128" alt="1" />
+              <div class="fix-45 ae-4">
+                <p class="tiny center">
+									<span class="opacity-6">
+										You know the skills that your candidates should suit.
+									</span>
+								</p>
+              </div>
+            </li>
+            <li class="col-4-12">
+              <img class="ae-6 fromCenter margin-bottom-3 margin-top-5" src="assets/img/icon-10.png" height="128" alt="2"/>
+              <div class="fix-45 ae-7">
+                <p class="tiny center">
+									<span class="opacity-6">
+										We give you the list of skills that often go together with what you're searching for.
+									</span>
+								</p>
+              </div>
+            </li>
+            <li class="col-4-12">
+              <img class="ae-8 fromCenter margin-bottom-3 margin-top-5" src="assets/img/icon-11.png" height="128" alt="3"/>
+              <div class="fix-45 ae-9">
+                <p class="tiny center">
+									<span class="opacity-6">
+										You search for candidates based on the skills we've provided.
+										Chances are they might be interested in working with you.
+									</span>
+								</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Panel Bottom #02 -->
+<nav class="panel bottom absolute forceMobileView">
+  <div class="sections desktop">
+    <div class="center">
+      <ul class="menu uppercase">
+        <li><a href="https://github.com/uyouthe/hrtable">GitHub</a></li>
+        <li><a href="https://miloslav.website">Founder</a></li>
+        <li><a href="https://cdn.jsdelivr.net/gh/uyouthe/hrtable/LICENSE">Legal</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/slides.min.js"></script>
+<script src="js/jsdict.js"></script>
+<script src="js/custom.js"></script>
+</body>
 </html>

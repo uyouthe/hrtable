@@ -1,0 +1,33 @@
+.slides,
+.slides p {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+.slides h1,
+.slides h2,
+.slides h3,
+.slides h4,
+.slides h5,
+.slides h6 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+.slides .button,
+.slides .slides-form {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+.slides {
+  background: white;
+}
+
+.stat {
+  float: right;
+}
+
+[hidden] {
+  display: none;
+}
